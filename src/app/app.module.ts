@@ -9,6 +9,7 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { RegisterPageComponent } from './componentes/register-page/register-page.component';
 import { PrivadoPageComponent } from './componentes/privado-page/privado-page.component';
 import { NotFoundPageComponent } from './componentes/not-found-page/not-found-page.component';
+import { LoginPageComponent } from './componentes/login-page/login-page.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { NotFoundPageComponent } from './componentes/not-found-page/not-found-pa
     NavbarComponent,
     RegisterPageComponent,
     PrivadoPageComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
