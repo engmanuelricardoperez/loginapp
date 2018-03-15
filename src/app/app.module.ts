@@ -11,12 +11,14 @@ import { PrivadoPageComponent } from './componentes/privado-page/privado-page.co
 import { NotFoundPageComponent } from './componentes/not-found-page/not-found-page.component';
 import { LoginPageComponent } from './componentes/login-page/login-page.component';
 
-import {AngularFireModule} from 'angularfire2';
-import {AngularFireAuthModule} from 'angularfire2/auth';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
-import {environment} from '../environments/environment'
-import {AuthService} from './servicios/auth.service';
-import {AuthGuard} from './guards/auth.guard';
+import { environment } from '../environments/environment'
+import { AuthService } from './servicios/auth.service';
+import { AuthGuard } from './guards/auth.guard';
+import { FlashMessagesModule } from 'angular2-flash-messages';
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,7 @@ import {AuthGuard} from './guards/auth.guard';
     RegisterPageComponent,
     PrivadoPageComponent,
     NotFoundPageComponent,
-    LoginPageComponent
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,9 +36,10 @@ import {AuthGuard} from './guards/auth.guard';
     FormsModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    FlashMessagesModule,
     
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, FlashMessagesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
