@@ -1,0 +1,49 @@
+ng new loginAPP --routing --style scss
+cd loginAPPng
+git config --global user.email "manuelricardo.perez@hotmail.com"
+git config --global user.name "engmanuelricardoperez"
+echo "# loginapp" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/engmanuelricardoperez/loginapp.git
+git push -u origin master
+
+npm install --save bootstrap@4.0 popper.js jquery font-awesome bootswatch
+ng serve
+
+git status
+git commit -am "Aquí se han instalado dependencias"
+git push
+
+ng g c componentes/homePage
+ng g c componentes/navbar
+ng g c componentes/registerPage
+ng g c componentes/loginPage
+ng g c componentes/privadoPage
+ng g c componentes/notFoundPage
+
+git status
+git add .
+git commit -am "Generación de componentes"
+git push
+
+git status
+git add .
+git commit -am "Generación de navbar y rutas"
+git push
+
+--Firebase
+npm install --save firebase@4.6.0 angularfire2
+
+    apiKey: "AIzaSyDcFXVx1_3UvDLtoWaP9wt8gNAUqx7uQ0Y",
+    authDomain: "apptrial-a34d0.firebaseapp.com",
+    databaseURL: "https://apptrial-a34d0.firebaseio.com",
+    projectId: "apptrial-a34d0",
+    storageBucket: "apptrial-a34d0.appspot.com",
+    messagingSenderId: "93145970935"
+	
+ng g s servicios/auth
+
+npm uninstall angularfire2 --save
+npm install firebase angularfire2 --save﻿
