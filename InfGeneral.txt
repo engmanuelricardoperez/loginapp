@@ -47,3 +47,7 @@ ng g s servicios/auth
 
 npm uninstall angularfire2 --save
 npm install firebase angularfire2 --save﻿
+
+ng g guard guards/auth
+
+npm install --save angular2-flash-messages
