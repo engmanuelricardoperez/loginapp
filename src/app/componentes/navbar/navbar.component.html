@@ -27,6 +27,11 @@
       <li class="nav-item">
           <a class="nav-link"> {{nombreUsuario}}</a>
       </li>
+
+      <li class="nav-item"  *ngIf="isLogin">>
+        <img src="{{fotoUsuario}}" class="rounded-circle">
+        <span class="badge pill badge-secondary">{{emailUsuario}}></span>
+      </li>
     </ul>
 	    <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="text" placeholder="Search">
