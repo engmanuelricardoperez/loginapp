@@ -20,6 +20,10 @@ import { AuthGuard } from './guards/auth.guard';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { FlashMessagesService } from 'angular2-flash-messages';
 
+//firebase database
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+
 @NgModule({
   declarations: [
     AppComponent,

@@ -1,3 +1,6 @@
+Curso:
+https://www.youtube.com/watch?v=P5zTKMRS6nI&list=PL_9MDdjVuFjEysdD_jFmrd4PfbqWcvYPA&index=1
+
 ng new loginAPP --routing --style scss
 cd loginAPPng
 git config --global user.email "manuelricardo.perez@hotmail.com"
@@ -55,3 +58,36 @@ npm install --save angular2-flash-messages
 cd C:\Users\Manuel\Documents\documentos induccion\Angular\loginAPPng
 
 https://apptrial-a34d0.firebaseapp.com/__/auth/handler
+
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '{your-app-id}',
+      cookie     : true,
+      xfbml      : true,
+      version    : '{latest-api-version}'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+npm install -g firebase-tools
+firebase login
+firebase init
+ng build --prod
+firebase deploy
+
+Query's a Firebase
+https://www.youtube.com/watch?v=sKFLI5FOOHs
