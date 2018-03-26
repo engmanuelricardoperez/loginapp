@@ -22,7 +22,13 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 
 //firebase database
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFirestoreModule} from 'angularfire2/firestore';
+import { CoursesComponent } from './componentes/courses/courses.component';
+import { CoursesService} from './servicios/courses.service'
 
+import { TypescourseService} from './servicios/typescourse.service'
+
+import { HttpClientModule } from '@angular/common/http'; import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -33,17 +39,18 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     PrivadoPageComponent,
     NotFoundPageComponent,
     LoginPageComponent,
+    CoursesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     AngularFireAuthModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebaseConfig, 'angular-fs'),
     FlashMessagesModule,
-    
+    AngularFirestoreModule,
   ],
-  providers: [AuthService, AuthGuard, FlashMessagesService],
+  providers: [AuthService, AuthGuard, FlashMessagesService, CoursesService, TypescourseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

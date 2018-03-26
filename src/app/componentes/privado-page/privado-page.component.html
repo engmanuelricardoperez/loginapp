@@ -30,4 +30,37 @@
       <span class="badge badge-primary badge-pill">1</span>
     </li>
   </ul>
+
+  <div *ngIf="typesCourse?.length > 0;else notypesCourse">
+      <ul *ngFor="let typesCourse of typesCourse" class="collection">
+        <li class="collection-typesCourse"><strong>{{typesCourse.title}}: </strong> {{typesCourse.description}} <a href="#" class="secondary-content">
+          <i (click)="edittypesCourse($event, typesCourse)" class="fa fa-pencil"></i>  
+          <i *ngIf="editState && typesCourseToEdit.code == typesCourse.code" (click)="clearState()" class="fa fa-compress"></i>  
+        </a>
+        
+        <div *ngIf="editState && typesCourseToEdit.code == typesCourse.code">
+          <form (ngSubmit)="updatetypesCourse(typesCourse)">
+              <div class="row">
+                  <div class="input-field col s6">
+                    <input type="text" placeholder="Add title" [(ngModel)]="typesCourse.title" name="title">
+                  </div>
+                  <div class="input-field col s6">
+                    <input type="text" placeholder="Add description" [(ngModel)]="typesCourse.description" name="description">
+                  </div>
+                  <input type="submit" value="Update typesCourse" class="btn orange">
+                  <button (click)="deletetypesCourse($event, typesCourse)" class="btn red">Delete typesCourse</button>
+                </div>
+          </form>
+        </div>
+    
+        </li>
+      </ul>
+    </div>
+    
+    <ng-template #notypesCourse>
+      <hr>
+      <h5>There are no typesCourse to list</h5>
+    </ng-template>
+    
+  
 </div>

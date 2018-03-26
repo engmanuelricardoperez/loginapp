@@ -1,0 +1,30 @@
+<div *ngIf="courses?.length > 0;else noCourses">
+    <ul *ngFor="let courses of courses" class="collection">
+      <li class="collection-courses"><strong>{{courses.title}}: </strong> {{courses.content1}} <a href="#" class="secondary-content">
+        <i (click)="editcourses($event, courses)" class="fa fa-pencil"></i>  
+        <i *ngIf="editState && coursesToEdit.code == courses.code" (click)="clearState()" class="fa fa-compress"></i>  
+      </a>
+      
+      <div *ngIf="editState && coursesToEdit.code == courses.code">
+        <form (ngSubmit)="updatecourses(courses)">
+            <div class="row">
+                <div class="input-field col s6">
+                  <input type="text" placeholder="Add title" [(ngModel)]="courses.title" name="title">
+                </div>
+                <div class="input-field col s6">
+                  <input type="text" placeholder="Add content1" [(ngModel)]="courses.content1" name="content1">
+                </div>
+                <input type="submit" value="Update courses" class="btn orange">
+                <button (click)="deletecourses($event, courses)" class="btn red">Delete courses</button>
+              </div>
+        </form>
+      </div>
+  
+      </li>
+    </ul>
+  </div>
+  
+  <ng-template #noCourses>
+    <hr>
+    <h5>There are no courses to list</h5>
+  </ng-template>
