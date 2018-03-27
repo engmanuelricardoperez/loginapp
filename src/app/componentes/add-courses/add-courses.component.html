@@ -1,0 +1,54 @@
+<div class="card">
+    <div class="card-content">
+      <span class="card-code">Add Course</span>
+      <form (ngSubmit)="onSubmit()" class="col s6">
+        <div class="row">
+
+        <div class="input-field col-s6">
+          <input type="text" placeholder="Add code" [(ngModel)]="course.code" name="code">
+          <label>Code</label>
+        </div>
+
+        <div class="input-field col-s6">
+          <input type="text" placeholder="Add Content 1" [(ngModel)]="course.content1" name="content1">
+          <label>Content 1</label>
+        </div>
+
+        <div class="input-field col-s6">
+          <input type="text" placeholder="Add Content 2" [(ngModel)]="course.content2" name="content2">
+          <label>Content 2</label>
+        </div>
+
+        <div class="input-field col-s6">
+          <input type="text" placeholder="Add Requirements" [(ngModel)]="course.requirements" name="requirements">
+          <label>Requirements</label>
+        </div>
+
+        <div class="input-field col-s6">
+          <input type="text" placeholder="Add Slug" [(ngModel)]="course.slug" name="slug">
+          <label>Slug (Example it-course)</label>
+        </div>
+
+        <div class="input-field col-s6">
+          <input type="text" placeholder="Add Start Date" [(ngModel)]="course.startDate" name="startDate">
+          <label>Start Date</label>
+        </div>
+        
+        <div class="input-field col-s6">
+          <input type="text" placeholder="Add title" [(ngModel)]="course.title" name="title">
+          <label>Title</label>
+        </div>
+
+        <div class="input-field col-s6">
+          <input type="text" placeholder="Add Type Course" [(ngModel)]="course.typeCourse" name="typeCourse">
+          <label>typeCourse</label>
+        </div>
+      </div>
+        <input type="submit" class="btn light-blue">
+      </form>
+    </div>
+  </div>
+
+  <ng-template #noCourse>
+      <h5>There is not Course yet.</h5>
+  </ng-template>
