@@ -1,13 +1,5 @@
 <div class="jumbotron">
-  <h1 class="display-3">Zona Privada</h1>
-  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-  <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-  </p>
-
-  <h1 class="display-3">Lista de Cursos:</h1>
+  <h2 class="display-3">Lista de Cursos Dummy:</h2>
   <ul class="list-group">
     <li class="list-group-item d-flex justify-content-between align-items-center">
       Shorties
@@ -32,6 +24,7 @@
   </ul>
 
   <div *ngIf="typesCourse?.length > 0;else notypesCourse">
+      <h2 class="display-3">Lista de Cursos Almacenada:</h2>
       <ul *ngFor="let typesCourse of typesCourse" class="collection">
         <li class="collection-typesCourse"><strong>{{typesCourse.title}}: </strong> {{typesCourse.description}} <a href="#" class="secondary-content">
           <i (click)="edittypesCourse($event, typesCourse)" class="fa fa-pencil"></i>  
