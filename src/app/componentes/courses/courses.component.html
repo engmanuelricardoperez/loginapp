@@ -1,10 +1,13 @@
 <div *ngIf="courses?.length > 0;else noCourses">
     <ul *ngFor="let courses of courses" class="collection">
-      <li class="collection-courses"><strong>{{courses.title}}: </strong> {{courses.content1}} <a href="#" class="secondary-content">
+      <li class="collection-courses"><strong>{{courses.title}}: </strong> {{courses.content1}} 
+        <a href="#" class="secondary-content">
         <i (click)="editcourses($event, courses)" class="fa fa-pencil"></i>  
+        <i (click)="deletecourses($event, courses)" class="fa fa-trash"></i>
         <i *ngIf="editState && coursesToEdit.code == courses.code" (click)="clearState()" class="fa fa-compress"></i>  
       </a>
       
+
       <div *ngIf="editState && coursesToEdit.code == courses.code">
         <form (ngSubmit)="updatecourses(courses)">
             <div class="row">
@@ -28,3 +31,4 @@
     <hr>
     <h5>There are no courses to list</h5>
   </ng-template>
+

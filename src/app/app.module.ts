@@ -10,6 +10,7 @@ import { RegisterPageComponent } from './componentes/register-page/register-page
 import { PrivadoPageComponent } from './componentes/privado-page/privado-page.component';
 import { NotFoundPageComponent } from './componentes/not-found-page/not-found-page.component';
 import { LoginPageComponent } from './componentes/login-page/login-page.component';
+import { AddCoursesComponent } from './componentes/add-courses/add-courses.component';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -30,6 +31,10 @@ import { TypescourseService} from './servicios/typescourse.service'
 
 import { HttpClientModule } from '@angular/common/http'; import { HttpModule } from '@angular/http';
 
+
+
+//App Course:
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +45,7 @@ import { HttpClientModule } from '@angular/common/http'; import { HttpModule } f
     NotFoundPageComponent,
     LoginPageComponent,
     CoursesComponent,
+    AddCoursesComponent,
   ],
   imports: [
     BrowserModule,

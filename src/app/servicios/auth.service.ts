@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class AuthService {
 
+  
   constructor(
     public afAuth: AngularFireAuth
   ) { }

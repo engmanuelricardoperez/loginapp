@@ -35,4 +35,5 @@ export class CoursesComponent implements OnInit {
   this.editState = false;
   this.itemToEdit = null;
   }
+
 }
