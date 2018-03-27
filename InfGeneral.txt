@@ -91,3 +91,23 @@ firebase deploy
 
 Query's a Firebase
 https://www.youtube.com/watch?v=sKFLI5FOOHs
+
+ng g c componentes/courses
+ng g s servicios/courses
+
+ng g s servicios/typescourse
+
+git status
+git add .
+git commit -am "Se agrega el icono de Whinker y la inscrustación de video"
+git push
+
+firebase login
+
+ng build --prod
+firebase deploy
+
+
+https://www.youtube.com/watch?v=3qODuvp1Zp8
+https://www.youtube.com/watch?v=H91VQRSNvW0&t=1878s
+
