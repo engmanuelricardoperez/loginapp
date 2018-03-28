@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Courses} from '../../modelos/courses';
 import { CoursesService} from '../../servicios/courses.service';
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 @Component({
   selector: 'app-courses',
   templateUrl: './courses.component.html',
@@ -10,7 +11,7 @@ export class CoursesComponent implements OnInit {
 
   courses : Courses[];
   editState: boolean = false;
-  itemToEdit: Courses;
+  coursesToEdit: Courses;
   constructor(public coursesServices: CoursesService) { }
 
   ngOnInit() {
@@ -21,19 +22,35 @@ export class CoursesComponent implements OnInit {
   });
 }
 
-  editItem(event, courses: Courses){
+deleteCourses(event, courses) {
+  console.log(courses);
+  const response = confirm('are you sure you want to delete?');
+  if (response ) {
+    this.coursesServices.deleteCourses(courses);
+    const response = alert("Borrado"+courses);
+  }
+  else
+  {
+    const response = alert("NO Borrado"+courses);
+  }
+  
+  return;
+}
+
+  editCourses(event, courses: Courses){
   this.editState = true;
-  this.itemToEdit = courses;
+  this.coursesToEdit = courses;
   }
 
-  updateItem(courses: Courses){
+  updateCourses(courses: Courses){
+    console.log('Actualizando el curso');
   this.coursesServices.updateCourses(courses);
   this.clearState();
   }
 
   clearState(){
   this.editState = false;
-  this.itemToEdit = null;
+  this.coursesToEdit = null;
   }
 
 }

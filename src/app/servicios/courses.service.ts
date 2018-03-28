@@ -33,12 +33,18 @@ export class CoursesService {
   }
 
   deleteCourses(courses: Courses) {
-    this.coursesDoc = this.afs.doc('courses/${courses.id}');
-    this.coursesDoc.delete();
+    console.log(courses);
+    console.log(this.afs.doc('Courses/${Courses.code}'));
+    console.log(courses.code);
+    this.coursesCollection.doc(courses.code).delete();
+    //this.coursesDoc = this.afs.doc('courses/${Courses.code}');
+    //this.coursesDoc.delete();
   }
 
   updateCourses(courses: Courses) {
-    this.coursesDoc = this.afs.doc('courses/${courses.id}');
-    this.coursesDoc.update(courses);
+    //this.coursesCollection.doc(courses.code).update({ status: 'inactive' });
+    this.coursesCollection.doc(courses.code).update(courses);
+    //this.coursesDoc = this.afs.doc('courses/${Courses.code}');
+    //this.coursesDoc.update(courses);
   }
 }

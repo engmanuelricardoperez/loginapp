@@ -111,3 +111,6 @@ firebase deploy
 https://www.youtube.com/watch?v=3qODuvp1Zp8
 https://www.youtube.com/watch?v=H91VQRSNvW0&t=1878s
 
+
+ng g c componentes/add-courses
+ng g s servicios/add-courses
