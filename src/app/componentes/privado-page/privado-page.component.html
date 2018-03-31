@@ -1,5 +1,5 @@
 <div class="jumbotron">
-  <h2 class="display-3">Lista de Cursos Dummy:</h2>
+  <!-- <h2 class="display-3">Lista de Cursos Dummy:</h2>
   <ul class="list-group">
     <li class="list-group-item d-flex justify-content-between align-items-center">
       Shorties
@@ -21,10 +21,10 @@
       Whinker Program
       <span class="badge badge-primary badge-pill">1</span>
     </li>
-  </ul>
+  </ul> -->
 
   <div *ngIf="typesCourse?.length > 0;else notypesCourse">
-      <h2 class="display-3">Lista de Cursos Almacenada:</h2>
+      <h5 class="display-5">Lista de Cursos Almacenada:</h5>
       <ul *ngFor="let typesCourse of typesCourse" class="collection">
         <li class="collection-typesCourse"><strong>{{typesCourse.title}}: </strong> {{typesCourse.description}} <a href="#" class="secondary-content">
           <i (click)="edittypesCourse($event, typesCourse)" class="fa fa-pencil"></i>  

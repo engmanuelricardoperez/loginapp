@@ -11,6 +11,7 @@ export class NavbarComponent implements OnInit {
   public nombreUsuario : string;
   public emailUsuario : string;
   public fotoUsuario: string;
+  isCollapsed = true;
   constructor(
     public authService: AuthService
   ) { }
@@ -26,6 +27,10 @@ export class NavbarComponent implements OnInit {
         this.isLogin = false;
       }
     })
+  }
+
+  toggleMenu() {
+    this.isCollapsed = !this.isCollapsed;
   }
 
   onClickLogout(){
