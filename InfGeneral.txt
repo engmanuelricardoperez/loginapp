@@ -99,7 +99,7 @@ ng g s servicios/typescourse
 
 git status
 git add .
-git commit -am "Se agrega el icono de Whinker y la inscrustación de video"
+git commit -am "Arreglo general de diseño"
 git push
 
 firebase login
@@ -114,3 +114,6 @@ https://www.youtube.com/watch?v=H91VQRSNvW0&t=1878s
 
 ng g c componentes/add-courses
 ng g s servicios/add-courses
+npm install --save jquery
+npm install --save popperjs
+npm install --save bootstrap@4.0.0-beta
